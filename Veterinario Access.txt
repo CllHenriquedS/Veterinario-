@@ -1,0 +1,69 @@
+create table cliente (cpfcli varchar (14), nomcli varchar (40), endcli varchar(40), cepcli varchar(40), baicli varchar(40), idacli integer, primary key (cpfcli));
+
+  insert into cliente values ("12547869801", "Mario", "Av Pompeia", "05051200", "Pompeia", "32")
+  insert into cliente values ("65224758897", "Camila", "Rua Tito, 1240", "02545001", "Lapa", "18")
+  insert into cliente values ("12547858890", "Felipe", "Av Paulista, 510", "03420002", "Jardins", "20")
+  insert into cliente values ("12425663801", "Roberto", "Rua Catao, 72", "05150002", "Lapa", "40")
+  insert into cliente values ("25469836802", "Luciana", "Rua Frobem, 55", "05302030", "Leopoldina", "25")
+  insert into cliente values ("25636547892", "Ana Cristina", " Rua Tito, 15", "02545002", "Lapa", "18")
+  insert into cliente values ("25478412860", "Marcela", "Rua Tito, 171", "02545001", "Lapa", "25")
+  insert into cliente values ("25414536890", "Aline", "Rua Oscar Freire, 25", "01411002", "Jardins", "20")
+  insert into cliente values ("21452466830", "Armando", "Rua John Smidt", "02545002", "Lapa", "18")
+
+
+create table animal (codani integer, nomani varchar(30), idaani integer, racani varchar (30), primary key (codani), cpfcli varchar(40), constraint chaveestrang foreign key (cpfcli) references cliente (cpfcli));
+  insert into animal values (101, "Rex", 4, "Poodle", "12547858890")
+  insert into animal values (102  ,"Mimo", 2 , "Beagle", "21452466830")
+  insert into animal values (103   ,"Thor", 5 , "Husky", "25414536890")
+  insert into animal values (104   ,"Branca", 2 , "Pug", "12547869801")
+  insert into animal values (105   ,"Tobe", 4 , "Labrador", "25636547892")
+  insert into animal values (106   ,"Mel", 2 , "Golden", "21452466830")
+  insert into animal values (107  ,"Tino", 3 , "Husky", "12425663801")
+  insert into animal values (108   ,"Xita", 2 , "Pug", "12547869801")
+  insert into animal values (109   ,"Luke", 5 , "Poodle", "25414536890")
+  insert into animal values (110   ,"Judy", 6 , "Labrador", "25469836802")
+
+select endcli from cliente where nomcli="Felipe"
+select idacli from cliente where nomcli="Marcela"
+select racani from animal where nomani="Branca"
+Select nomcli from cliente where baicli="Lapa"
+select idaani from animal where nomani="Thor"
+select nomani from animal where racani ="Labrador"
+select idaani from animal where racani="Pug"
+select endcli from cliente where cepcli="05302030"
+Select nomcli, endcli from cliente where idacli>20
+create table clientevet (cpfcli varchar (14), nomcli varchar (40), endcli varchar(40), cepcli varchar(40), baicli varchar(40), idacli integer, primary key (cpfcli));
+
+  insert into clientevet values ("12547869901", "Luan", "Av Pompeia", "05051222", "Pompeia", "30")
+  insert into clientevet values ("89224758899", "Melissa", "Rua Azevedo Machado, 1380", "02545228", "Lapa", "25")
+  insert into clientevet values ("12557858892", "Rafael", "Av Paulista, 510", "03420002", "Jardins", "20")
+  insert into clientevet values ("13425663888", "Carlos", "Rua Carmen Santos, 72", "05150002", "Morumbi", "35")
+  insert into clientevet values ("25469836833", "Larissa", "Rua Frobem, 55", "05303122", "Leopoldina", "19")
+  insert into clientevet values ("25636548875", "Carolina", " Rua Arthur Pontes, 15", "02545002", "Morumbi", "18")
+  insert into clientevet values ("25478412665", "Cátia", "Rua Nino, 171", "02545001", "Morumbi", "23")
+  insert into clientevet values ("26414536987", "Eduardo", "Rua Oscar Freire, 25", "01411002", "Jardins", "20")
+  insert into clientevet values ("21452466899", "José", "Rua John Wayne", "02545002", "Morumbi", "22")
+  insert into clientevet values ("86152466333", "Rodolfo", "Rua João Smidt", "12545002", "Morumbi", "21")
+
+create table animalvet (codani integer, nomani varchar(30), idaani integer, racani varchar (30), primary key (codani), cpfcli varchar(40), constraint chaveestrangeira foreign key (cpfcli) references clientevet (cpfcli));
+
+  insert into animalvet values (101, "Astolfo", 4, "Poodle", "12547869901")
+  insert into animalvet values (102, "Jubileu", 2 , "Beagle", "89224758899")
+  insert into animalvet values (103, "Charlie", 5 , "Husky", "12557858892")
+  insert into animalvet values (104, "Donald", 2 , "Pastor Alemão", "13425663888")
+  insert into animalvet values (105, "Bruce", 4 , "Rottweiler", "25469836833")
+  insert into animalvet values (106, "Bob", 2 , "Golden", "25636548875")
+  insert into animalvet values (107, "Bray", 3 , "Husky", "25478412665")
+  insert into animalvet values (108, "Maggie", 2 , "Pastor Alemão", "26414536987")
+  insert into animalvet values (109, "Zeus", 5 , "Poodle", "21452466899")
+  insert into animalvet values (110, "Theo", 6 , "Rottweiler", "86152466333")
+
+select endcli from clientevet where nomcli="Luan"
+select idacli from clientevet where nomcli="Larissa"
+select racani from animalvet where nomani="Maggie"
+Select nomcli from clientevet where baicli="Morumbi"
+select idaani from animalvet where nomani="Charlie"
+select nomani from animalvet where racani ="Rottweiler"
+select idaani from animalvet where racani="Pastor Alemão"
+select endcli from clientevet where cepcli="05303122"
+Select nomcli, endcli from clientevet where idacli>20
